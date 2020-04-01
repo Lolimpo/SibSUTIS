@@ -1,0 +1,25 @@
+(defun task1 (A B)
+	(cond
+		((null A) (null B))
+		((member (car A) B) (task1 (cdr A) (remove (car A) B)))
+	)
+)
+(F '(1 3 2) '(1 3 2))
+
+(defun task2 (w v)
+	(cond
+		((null w) nil)
+		((member (car w) v) (cons (car w) (task2 (cdr w) v)))
+		((task2 (cdr w) v))
+	)
+)
+(task2 '(1 2 3) '(1 7 6 3 7 4))
+
+(defun task3 (func lst) 
+	(cond ((null lst) nil)
+		((funcall func (car lst)) (cons '* (cons (car lst) (task3 func (cdr lst)))))
+        (t (cons (car lst) (task3 func (cdr lst))))
+	)
+)
+(task3 #'(lambda(x) (>= x 0)) '(1 2 3 4 -5 -6 7 -8 -9))
+(task3 #'evenp '(1 2 3 4 5 6 7 8 9))
