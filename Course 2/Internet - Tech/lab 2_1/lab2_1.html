@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//RU">
+<HTML><HEAD>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=Windows-1251">
+<TITLE>Лабораторная 2.1</TITLE>
+</HEAD>
+<script language="JavaScript">
+var state = 0
+
+function swap()
+{
+	var img1, img2
+	img1 = document.getElementById('img1').src
+	img2 = document.getElementById('img2').src
+	document.getElementById('img2').src = img1 // смена рисунков
+	document.getElementById('img1').src = img2
+	
+	if(state == 0)
+	{
+		document.getElementById("butt").style.float = "right"
+		state = 1
+	}
+	else
+	{
+		document.getElementById("butt").style.float = "left"
+		state = 0
+	}
+}
+</script>
+<BODY>
+<IMG src="1.gif" id=img1>
+<IMG src="2.gif" id=img2>
+<input id='butt' type="button" value="Swap" onClick="swap()">
+</BODY>
+</HTML>

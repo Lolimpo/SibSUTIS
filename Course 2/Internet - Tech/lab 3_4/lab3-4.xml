@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="WINDOWS-1251"?>
+
+<university>
+   <faculty>
+      <caption>ИВТ</caption> 
+      <course>
+        <caption>1</caption> 
+        <group>
+          <caption>ИП-713</caption> 
+          <student>
+            <caption>Михеев Никита</caption> 
+            <matan>1</matan>
+            <oop>2</oop>
+            <sxem>1</sxem>
+            <mlta>2</mlta>
+            <infor>2</infor>
+            <eng>2</eng>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Фролов Кирилл</caption> 
+            <matan>0</matan>
+            <oop>2</oop>
+            <sxem>2</sxem>
+            <mlta>2</mlta>
+            <infor>2</infor>
+            <eng>0</eng>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Устенко Дмитрий</caption> 
+            <matan>2</matan>
+            <oop>2</oop>
+            <sxem>2</sxem>
+            <mlta>0</mlta>
+            <infor>2</infor>
+            <eng>1</eng>
+            <fra>1</fra>
+          </student>
+        </group>
+      </course>
+   </faculty>
+   <faculty>  
+      <caption>МРМ</caption> 
+      <course>
+        <caption>2</caption> 
+        <group>
+          <caption>МР-712</caption> 
+          <student>
+            <caption>Иванов Иван</caption> 
+            <matan>2</matan>
+            <hist>2</hist>
+            <saod>1</saod>
+            <sxem>2</sxem>
+            <otc>2</otc>
+            <eng>0</eng>
+            <fra>1</fra>
+          </student>
+          <student>
+            <caption>Семенов Семен</caption> 
+            <matan>1</matan>
+            <hist>1</hist>
+            <saod>0</saod>
+            <sxem>2</sxem>
+            <otc>1</otc>
+            <eng>0</eng>
+            <fra>2</fra>
+          </student>
+        </group>
+      </course>
+   </faculty>
+   <matan>Математический анализ</matan>
+   <infor>Информатика</infor>
+   <eng>Английский язык</eng>
+   <fra>Физическая культура</fra>
+   <mlta>МЛТА</mlta>
+   <econ>Экономика</econ>
+   <fizik>Физика</fizik>
+   <hist>История</hist>
+   <otc>ОТЦ</otc>
+   <dismat>Дискретная математика</dismat>
+   <saod>САОД</saod>
+   <sxem>схемотехника</sxem>
+   <inf_tech>Информационная технология</inf_tech>
+   <oop>Объектно-Ориентированное Программирование</oop>
+</university>

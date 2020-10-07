@@ -1,0 +1,215 @@
+<HTML><HEAD>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=Windows-1251">
+<TITLE>Лабораторная работа 3.4</TITLE>
+<SCRIPT LANGUAGE="JavaScript" type="text/javascript">
+var xmldoc=new ActiveXObject("Microsoft.XMLDOM"); 
+xmldoc.async=false;
+xmldoc.load("lab3-4.xml"); 
+var student_node, group_node, course_node, faculty_node;
+student_node=group_node=course_node=faculty_node=xmldoc.getElementsByTagName("faculty");
+var newElem;
+var gb=false;
+var mas_rad=new Array();
+count_elem=new Number(0);
+function LoadDoc()
+{
+ document.all.fac_select.options.length=faculty_node.length;
+ for(var i=0;i<faculty_node.length;i++)
+ {
+  tag=faculty_node.item(i);
+  chltag=tag.getElementsByTagName("caption");
+  document.all.fac_select.options[i]=new Option(chltag.item(0).text,i);
+ }
+ change_fac();
+}
+function change_fac()
+{
+ tag=faculty_node.item(document.all.fac_select.selectedIndex);
+ course_node=tag.getElementsByTagName("course");
+ document.all.cour_select.options.length=course_node.length;
+ for(var i=0;i<course_node.length;i++)
+ {
+  temp_teg=course_node.item(i);
+  viewtag=temp_teg.getElementsByTagName("caption");
+  document.all.cour_select.options[i]=new Option(viewtag.item(0).text);
+ }
+ change_cour();
+}
+function change_cour()
+{
+ tag=course_node.item(document.all.cour_select.selectedIndex);
+ group_node=tag.getElementsByTagName("group");
+ document.all.gr_select.options.length=group_node.length;
+ for(var i=0;i<group_node.length;i++)
+ {
+  temp_teg=group_node.item(i);
+  viewtag=temp_teg.getElementsByTagName("caption");
+  document.all.gr_select.options[i]=new Option(viewtag.item(0).text);
+ }
+ change_gr();
+}
+function change_gr()
+{
+ tag=group_node.item(document.all.gr_select.selectedIndex);
+ student_node=tag.getElementsByTagName("student");
+ document.all.stud_select.options.length=student_node.length;
+ for(var i=0;i<student_node.length;i++)
+ {
+  temp_teg=student_node.item(i);
+  viewtag=temp_teg.getElementsByTagName("caption");
+  document.all.stud_select.options[i]=new Option(viewtag.item(0).text);
+ }
+ build_table();
+}
+function build_table()
+{
+ var sum=Number(0);
+ tag=student_node.item(document.all.stud_select.selectedIndex);
+ temp_node=tag.getElementsByTagName("*");
+ if (gb)
+ {
+  document.body.removeChild(newElem);
+  document.body.removeChild(smalltable);
+  document.body.removeChild(obj_but);
+  document.body.removeChild(obj_cbut);
+  document.body.removeChild(obj_min);
+ } 
+ gb=true;
+ newElem=document.createElement('table');
+ newElem.setAttribute('id','tl');
+ newElem.setAttribute('border','1');
+ newElem.setAttribute('name','dyntable');
+ var newRow=newElem.insertRow(0);
+ newRow.setAttribute('border','1');
+ var newCell=newRow.insertCell(0);
+ newCell.setAttribute('width','80%');
+ newCell.innerHTML="<center><b>Предмет</b></center>"; 
+ var newCell=newRow.insertCell(1);
+ newCell.innerHTML="<center><b>0</b></center>"; 
+ var newCell=newRow.insertCell(2);
+ newCell.innerHTML="<center><b>1</b></center>"; 
+ var newCell=newRow.insertCell(3);
+ newCell.innerHTML="<center><b>2</b></center>";
+ count_elem=0;
+ for(var i=1;i<temp_node.length;i++)
+ {
+  var newRow=newElem.insertRow(i);
+  newRow.setAttribute('border','1');
+  count_elem++;
+  find_node=xmldoc.getElementsByTagName(temp_node.item(i).nodeName);
+  var newCell=newRow.insertCell(0);
+  newCell.innerHTML=find_node.item(find_node.length-1).text;
+  for(j=0;j<3;j++)
+  {
+   var newCell=newRow.insertCell(j+1);
+   newrad=document.createElement('input');
+   mas_rad[i-1]=newrad;
+   newrad.setAttribute('type','radio');
+   str='knp'+i;
+   newrad.setAttribute('value',i+'');
+   newrad.setAttribute('name',str);
+   newrad.onclick=izmn;
+   if ((j+"")==temp_node.item(i).text)
+   {
+    newrad.setAttribute('defaultChecked',true);
+    sum+=j;
+   }
+   newCell.appendChild(newrad);
+  }
+ }
+ document.body.appendChild(newElem);
+ smalltable=document.createElement('DIV');
+ smalltable.setAttribute('id','div_text');
+ sr=sum/count_elem;
+ str=sr.toString();
+ strn="";
+ for (i=0;i<4;i++)
+  strn+=str.charAt(i);
+ smalltable.innerHTML="Ср. балл за КС:"+strn; 
+ document.body.appendChild(smalltable);
+ obj_but=document.createElement('button');
+ obj_but.setAttribute('value','Подсчитать');
+ obj_but.onclick=act;
+ document.body.appendChild(obj_but);
+ obj_cbut=document.createElement('button');
+ obj_cbut.setAttribute('value','Сбросить');
+ obj_cbut.onclick=can_act;
+ document.body.appendChild(obj_cbut);
+ obj_min=document.createElement('button');
+ obj_min.setAttribute('value','Минимум');
+ obj_min.onclick=minimum;
+ document.body.appendChild(obj_min);
+}
+function act()
+{
+ var sum=new Number(0);
+ for (i=1;i<=count_elem;i++)
+ {
+  find_str="knp"+i;
+  obj=document.getElementsByName(find_str);
+  for (j=0;j<3;j++)
+   if (obj[j].checked)
+    sum+=j;
+ }
+ sr=sum/count_elem;
+ str=sr.toString();
+ strn="";
+ for (i=0;i<4;i++)
+  strn+=str.charAt(i);
+ document.body.removeChild(smalltable);
+ document.body.removeChild(obj_but);
+ document.body.removeChild(obj_cbut);
+document.body.removeChild(obj_min);
+ smalltable=document.createElement('DIV');
+ smalltable.setAttribute('id','div_text');
+ sr=sum/count_elem;
+ str=sr.toString();
+ strn="";
+ for (i=0;i<4;i++)
+  strn+=str.charAt(i);
+ smalltable.innerHTML="Ср. балл за КС:"+strn; 
+ document.body.appendChild(smalltable);
+ obj_but=document.createElement('button');
+ obj_but.setAttribute('value','Make');
+ obj_but.onclick=act;
+ document.body.appendChild(obj_but);
+ obj_cbut=document.createElement('button');
+ obj_cbut.setAttribute('value','Отменить');
+ obj_cbut.onclick=can_act;
+ document.body.appendChild(obj_cbut);
+ obj_min=document.createElement('button');
+ obj_min.setAttribute('value','Минимум');
+ obj_min.onclick=minimum;
+ document.body.appendChild(obj_min);
+}
+function can_act()
+{
+ build_table();
+}
+function izmn()
+{
+ st=this.name.substring(3, 4);
+ k=parseInt(st);  
+ tag=student_node.item(document.all.stud_select.selectedIndex);
+ temp_node=tag.getElementsByTagName("*");
+ temp_node.item(k).text=0+"";
+ find_str=this.name;
+ obj=document.getElementsByName(find_str);
+ for (j=0;j<3;j++)
+  if (obj[j].checked)
+   temp_node.item(k).text=j+"";
+}
+
+</SCRIPT>
+</HEAD> 
+<BODY BGCOLOR="white" TEXT="black" LINK="blue" ALINK="red" VLINK="green" onLoad="LoadDoc()">
+Факультет:<select id="fac_select" size=1 style="width=56px" onChange="change_fac()">
+</select>
+Курс:<select id="cour_select" size=1 onChange="change_cour()">
+</select>
+Группа:<select id="gr_select" size=1 style="width=75px" onChange="change_gr()">
+</select>
+ФИО:<select id="stud_select" size=1 style="width=210px" onChange="build_table()">
+</select><p>
+</BODY>
+</HTML>

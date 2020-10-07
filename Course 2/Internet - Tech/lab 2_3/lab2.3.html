@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <h1>Соберите Мозаику</h1>
+  
+</head>
+
+<body style="height: 200px", onload="start">
+<img src="r1.gif" style="cursor:pointer" id="img1">
+  <img src="r2.gif" style="cursor:pointer" id="img2">
+  <img src="r3.gif" style="cursor:pointer" id="img3">
+  <img src="r4.gif" style="cursor:pointer" id="img4">
+<script language="JavaScript">
+	img4.onmousedown = function(e) 
+	{
+	
+      img4.style.position = 'absolute';
+      moveAt(e);
+
+      document.body.appendChild(img4);
+
+      img4.style.zIndex = 1000; // показывать мяч над другими элементами
+
+      function moveAt(e) {
+        img4.style.left = e.pageX - img4.offsetWidth / 2 + 'px';
+        img4.style.top = e.pageY - img4.offsetHeight / 2 + 'px';
+      }
+
+      document.onmousemove = function(e) {
+        moveAt(e);
+      };
+
+      img4.onmouseup = function() {
+        document.onmousemove = null;
+        img4.onmouseup = null;
+      };
+	  
+	  img4.ondragstart = function() {
+		return false;
+	  };
+	  img3.onmousedown = function(e) 
+	{
+      img3.style.position = 'absolute';
+      moveAt(e);
+
+      document.body.appendChild(img3);
+
+      img3.style.zIndex = 1000; // показывать мяч над другими элементами
+
+      function moveAt(e) {
+        img3.style.left = e.pageX - img3.offsetWidth / 2 + 'px';
+        img3.style.top = e.pageY - img3.offsetHeight / 2 + 'px';
+      }
+
+      document.onmousemove = function(e) {
+        moveAt(e);
+      };
+
+      img3.onmouseup = function() {
+        document.onmousemove = null;
+        img3.onmouseup = null;
+      };
+	  
+	  img3.ondragstart = function() {
+		return false;
+	  };
+	  img2.onmousedown = function(e) 
+	{
+      img2.style.position = 'absolute';
+      moveAt(e);
+
+      document.body.appendChild(img2);
+
+      img2.style.zIndex = 1000; // показывать мяч над другими элементами
+
+      function moveAt(e) {
+        img2.style.left = e.pageX - img2.offsetWidth / 2 + 'px';
+        img2.style.top = e.pageY - img2.offsetHeight / 2 + 'px';
+      }
+
+      document.onmousemove = function(e) {
+        moveAt(e);
+      };
+
+      img2.onmouseup = function() {
+        document.onmousemove = null;
+        img2.onmouseup = null;
+      };
+	  
+	  img2.ondragstart = function() {
+		return false;
+	  };
+	  img1.onmousedown = function(e) 
+	{
+      img1.style.position = 'absolute';
+      moveAt(e);
+
+      document.body.appendChild(img1);
+
+      img1.style.zIndex = 1000;
+
+      function moveAt(e) {
+        img1.style.left = e.pageX - img1.offsetWidth / 2 + 'px';
+        img1.style.top = e.pageY - img1.offsetHeight / 2 + 'px';
+      }
+
+      document.onmousemove = function(e) {
+        moveAt(e);
+      };
+
+      img1.onmouseup = function() {
+        document.onmousemove = null;
+        img1.onmouseup = null;
+      };
+	  
+	  img1.ondragstart = function() {
+		return false;
+	  };
+    }
+    }
+    }
+    }
+  </script>
+  
+</body>
+</html>

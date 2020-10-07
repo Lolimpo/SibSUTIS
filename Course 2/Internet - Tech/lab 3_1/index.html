@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Lab 3_1</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<script>
+	var flag = 1;
+function menu1(){
+  document.getElementById("menu1").style.visibility='visible';
+  document.getElementById("menu2").style.visibility='hidden';
+  document.getElementById("menu3").style.visibility='hidden';
+}
+function menu2(){
+if (flag == 1)
+{
+  document.getElementById("menu1").style.visibility='hidden';
+  document.getElementById("menu2").style.visibility='visible';
+  document.getElementById("menu3").style.visibility='hidden';
+  }
+}
+function menu3(){
+  document.getElementById("menu1").style.visibility='hidden';
+  document.getElementById("menu2").style.visibility='hidden';
+  document.getElementById("menu3").style.visibility='visible';
+}
+function stop()
+{
+  document.getElementById("menu1").style.visibility='hidden';
+  document.getElementById("menu2").style.visibility='hidden';
+  document.getElementById("menu3").style.visibility='hidden';
+}
+function timer(e)
+{
+	var timerID = setTimeout(stop, e);
+}
+function deny()
+{
+	flag = 0
+}
+	</script>
+  </head>
+  <body> 
+    <div id="menu">
+        <a onMouseOver="menu1()">Menu 1</a>
+        <a onMouseOver="menu2()">Menu 2</a>
+        <a onMouseOver="menu3()">Menu 3</a>
+    </div>      
+    <div id="menu1">
+		<a onMouseOver="clearTimeout(timerID)">subMenu 1</a>
+		<a onMouseOver="clearTimeout(timerID)" onClick="deny()">subMenu 2</a>
+		<a onMouseOver="clearTimeout(timerID)" onMouseOut="timer(500)">subMenu 3</a>
+	</div>
+	<div id="menu2">
+		<a onMouseOver="clearTimeout(timerID)">subMenu 4</a>
+		<a onMouseOver="clearTimeout(timerID)">subMenu 5</a>
+		<a onMouseOver="clearTimeout(timerID)" onMouseOut="timer(500)">subMenu 6</a>
+	</div>
+	<div id="menu3">
+		<a onMouseOver="clearTimeout(timerID)">subMenu 7</a>
+		<a onMouseOver="clearTimeout(timerID)">subMenu 8</a>
+		<a onMouseOver="clearTimeout(timerID)" onMouseOut="timer(500)">subMenu 9</a>
+	</div>
+  </body>
+</html>

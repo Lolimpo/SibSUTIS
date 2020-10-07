@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//RU">
+<HTML><HEAD>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=Windows-1251">
+<TITLE>Лабораторная 2.2</TITLE>
+</HEAD>
+<script language="JavaScript">
+
+var counter = 0
+var Timer_1
+var state = 0
+
+function animate()
+{
+	if(counter == 0)
+	{
+		document.getElementById("img1").src="s2.gif"
+		counter = 1
+		return;
+	}
+	if(counter == 1)
+	{
+		document.getElementById("img1").src="s3.gif"
+		counter = 2
+		return;
+	}
+	if(counter == 2)
+	{
+		document.getElementById("img1").src="s4.gif"
+		counter = 3
+		return;
+	}
+	if(counter == 3)
+	{
+		document.getElementById("img1").src="s5.gif"
+		counter = 4
+		return;
+	}
+	if(counter == 4)
+	{
+		document.getElementById("img1").src="s6.gif"
+		counter = 5
+		return;
+	}
+	if(counter == 5)
+	{
+		document.getElementById("img1").src="s7.gif"
+		counter = 6
+		return;
+	}
+	if(counter == 6)
+	{
+		document.getElementById("img1").src="s8.gif"
+		counter = 7
+		return;
+	}
+	if(counter == 7)
+	{
+		document.getElementById("img1").src="s9.gif"
+		counter = 8
+		return;
+	}
+	if(counter == 8)
+	{
+		document.getElementById("img1").src="s10.gif"
+		counter = 9
+		return;
+	}
+	if(counter == 9)
+	{
+		document.getElementById("img1").src="s11.gif"
+		counter = 10
+		return;
+	}
+	if(counter == 10)
+	{
+		document.getElementById("img1").src="s12.gif"
+		counter = 11
+		return;
+	}
+	if(counter == 11)
+	{
+		document.getElementById("img1").src="s1.gif"
+		counter = 0
+		return;
+	}
+}
+function move()
+{
+	clearTimeout(Timer_1)
+	if(state == 0) {Timer_1 = setTimeout('animate()', 500)} // 0 - normal
+	if(state == 1) {Timer_1 = setTimeout('animate()', 100)} // 1 - fast
+	if(state == 2) {Timer_1 = setTimeout('animate()', 1000)} // 2 - slow
+	if(state == 3) {clearTimeout(Timer_1)} // 3 - stop
+	if(state == 4) {Timer_1 = setTimeout('animate()', 10000)}
+}
+function stop()
+{
+	state = 3
+}
+function start()
+{
+	state = 0
+	move()
+}
+function fast_moving()
+{
+	state = 1
+	move()
+}
+function slow_moving()
+{
+	state = 2
+	move()
+}
+</script>
+<BODY>
+<img id=img1 name="animation" src="s1.gif" onLoad="move()">
+<br>
+<input type="button" value="Start" onClick="start()">
+<input type="button" value="Stop" onClick="stop()">
+<input type="button" value="Faster" onClick="fast_moving()">
+<input type="button" value="Slower" onClick="slow_moving()">
+</BODY>
+</HTML>

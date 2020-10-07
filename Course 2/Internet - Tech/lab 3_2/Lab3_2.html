@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<script type ="text/javascript">
+function setCookie(name, value)
+{
+	document.cookie = name + "=" + value;
+}
+
+function getCookie(name)
+{
+	var r = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
+	if (r) return r[2];
+	else return "";
+}
+
+function deleteCookie(name)
+{
+	var date = new Date();
+	date.setTime(date.getTime() - 1);
+	document.cookie = name += "=; expires=" + date.toGMTString();
+}
+
+function DeleteEveryThing()
+{
+	deleteCookie("Visits" - 1);
+}
+
+function Register()
+{
+	var f = document.getElementById("inputName").value;
+	setCookie("Name", f);
+}
+var x;
+var y = 0;
+var MinutesPast;
+var Minutes;
+var SecondsPast;
+var Seconds;
+var now = new Date();
+var MinutesPast = getCookie("MinutesPast");
+var SecondsPast = getCookie("SecondsPast");
+setCookie("MinutesPast", now.getMinutes());
+setCookie("SecondsPast", now.getSeconds());
+Minutes = now.getMinutes() - MinutesPast;
+Seconds = now.getSeconds() - SecondsPast;
+if (Seconds < 0)
+{
+	Seconds = now.getSeconds() + 60 - SecondsPast;
+	Minutes = Minutes - 1;
+}
+
+x = getCookie("Name");
+y = parseInt(x,10) + 1;
+if (isNaN(y))
+y = 0;
+setCookie("Name", y);
+var z = y - 1;
+z = z + "";
+y = y + "";
+</script>
+</HEAD>
+<BODY>
+<form action="Registration.html">
+	<h1>Cookie</h1>
+	<p>Привет, <script>document.write(getCookie("Name"));</script>!</p>
+	<p>Количество посещений этой странциы: <script>document.write("Visits");</script> </p>
+	<p>Вы были на этой странице: <script>document.write(Seconds);</script> секунд</p>
+	<p>Введите имя <INPUT TYPE=TEXTBOX id="inputName"></p>
+	<INPUT TYPE="BUTTON" VALUE="Регистрация" ONCLICK="Register()">
+	<p>
+	<INPUT TYPE="BUTTON" VALUE="Обнулить посещения" ONCLICK="DeleteEveryThing()">
+</form>
+</BODY>
+</HTML>
