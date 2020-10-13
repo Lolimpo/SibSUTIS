@@ -44,6 +44,3 @@ A = [list(map(Fraction, line.split())) for line in open("matrix.txt")]
 print_matrix(A)
 gauss_jordan(A)
 print_answers(A)
-plt.plot([0, 4, 0, 10])
-plt.ylabel('Max loh')
-plt.show()

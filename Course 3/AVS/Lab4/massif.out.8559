@@ -1,0 +1,111 @@
+desc: --time-unit=B
+cmd: ./lab4
+time_unit: B
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=72712
+mem_heap_B=72704
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=73744
+mem_heap_B=73728
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=400076760
+mem_heap_B=400073728
+mem_heap_extra_B=3032
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=800079776
+mem_heap_B=800073728
+mem_heap_extra_B=6048
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=800080808
+mem_heap_B=800074752
+mem_heap_extra_B=6056
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=800080808
+mem_heap_B=800074752
+mem_heap_extra_B=6056
+mem_stacks_B=0
+heap_tree=peak
+n2: 800074752 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 800000000 0x10A175: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /home/lolimpo/Рабочий стол/Projects/evm/lab4/lab4)
+  n1: 800000000 0x10A013: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (in /home/lolimpo/Рабочий стол/Projects/evm/lab4/lab4)
+   n1: 800000000 0x109F33: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /home/lolimpo/Рабочий стол/Projects/evm/lab4/lab4)
+    n1: 800000000 0x109D1E: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /home/lolimpo/Рабочий стол/Projects/evm/lab4/lab4)
+     n1: 800000000 0x109940: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /home/lolimpo/Рабочий стол/Projects/evm/lab4/lab4)
+      n2: 800000000 0x109742: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /home/lolimpo/Рабочий стол/Projects/evm/lab4/lab4)
+       n1: 400000000 0x109258: saxpy(int) (in /home/lolimpo/Рабочий стол/Projects/evm/lab4/lab4)
+        n0: 400000000 0x10952D: main (in /home/lolimpo/Рабочий стол/Projects/evm/lab4/lab4)
+       n1: 400000000 0x109289: saxpy(int) (in /home/lolimpo/Рабочий стол/Projects/evm/lab4/lab4)
+        n0: 400000000 0x10952D: main (in /home/lolimpo/Рабочий стол/Projects/evm/lab4/lab4)
+ n0: 74752 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=7
+#-----------
+time=1200083824
+mem_heap_B=400074752
+mem_heap_extra_B=3040
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=1600086840
+mem_heap_B=74752
+mem_heap_extra_B=24
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=1600159552
+mem_heap_B=2048
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=1600160584
+mem_heap_B=1024
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=1600161616
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty

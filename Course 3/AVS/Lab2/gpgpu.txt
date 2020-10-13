@@ -1,0 +1,95 @@
+Benchmark                        Result  Run Time  Build Time
+-------------------------------------------------------------
+Memory Read                   3111 MB/s   2156 ms            
+- Pinned                      3111 MB/s     10 ms            
+- Pageable                    2642 MB/s     11 ms            
+Memory Write                  2939 MB/s   1172 ms            
+- Pinned                      2939 MB/s     10 ms            
+- Pageable                    2427 MB/s     12 ms            
+Memory Copy                  39129 MB/s   4500 ms            
+- 15 MB Block                36959 MB/s      1 ms            
+- 32 MB Block                38048 MB/s      2 ms            
+- 64 MB Block                38377 MB/s      3 ms            
+- 128 MB Block               38888 MB/s      7 ms            
+- 256 MB Block               39038 MB/s     13 ms            
+- 512 MB Block               39124 MB/s     26 ms            
+- 512 MB Block               39129 MB/s     26 ms            
+Single-Precision FLOPS      1279 GFLOPS  11391 ms            
+- float1                    1170 GFLOPS    940 ms     1141 ms
+- float2                    1260 GFLOPS    873 ms      204 ms
+- float4                    1272 GFLOPS    864 ms      187 ms
+- float8                    1279 GFLOPS    860 ms      188 ms
+- float16                   1274 GFLOPS    863 ms      187 ms
+Double-Precision FLOPS     40.38 GFLOPS  11765 ms            
+- double1                  40.38 GFLOPS    851 ms      235 ms
+- double2                  40.33 GFLOPS    852 ms      203 ms
+- double4                  40.32 GFLOPS    852 ms      204 ms
+- double8                  40.09 GFLOPS    857 ms      281 ms
+- double16                 39.18 GFLOPS    877 ms      297 ms
+24-bit Integer IOPS         429.6 GIOPS  10031 ms            
+- int1                      426.6 GIOPS    644 ms      203 ms
+- int2                      429.6 GIOPS    640 ms      265 ms
+- int4                      423.2 GIOPS    650 ms      360 ms
+- int8                      403.3 GIOPS    682 ms      500 ms
+- int16                     373.2 GIOPS    737 ms      610 ms
+32-bit Integer IOPS         426.1 GIOPS   9765 ms            
+- int1                      422.3 GIOPS    651 ms      781 ms
+- int2                      426.1 GIOPS    645 ms      219 ms
+- int4                      425.8 GIOPS    645 ms      250 ms
+- int8                      401.6 GIOPS    684 ms      297 ms
+- int16                     369.4 GIOPS    744 ms      297 ms
+64-bit Integer IOPS         73.30 GIOPS  11234 ms            
+- long1                     73.30 GIOPS    938 ms      812 ms
+- long2                     67.26 GIOPS    511 ms      297 ms
+- long4                     62.30 GIOPS    552 ms      610 ms
+- long8                     61.93 GIOPS    555 ms      578 ms
+- long16                    37.82 GIOPS    908 ms     1328 ms
+AES-256                       3392 MB/s  42563 ms            
+- inline loop / 4 MB          3358 MB/s    610 ms      157 ms
+- inline loop / 8 MB          3361 MB/s    609 ms            
+- inline loop / 16 MB         3358 MB/s    610 ms            
+- inline loop / 32 MB         3350 MB/s    611 ms            
+- inline loop / 64 MB         3334 MB/s    614 ms            
+- inline loop / 128 MB        3301 MB/s    620 ms            
+- inline unroll / 4 MB        3389 MB/s    604 ms      281 ms
+- inline unroll / 8 MB        3388 MB/s    605 ms            
+- inline unroll / 16 MB       3390 MB/s    604 ms            
+- inline unroll / 32 MB       3386 MB/s    605 ms            
+- inline unroll / 64 MB       3373 MB/s    607 ms            
+- inline unroll / 128 MB      3348 MB/s    612 ms            
+- inline unroll / 256 MB      3278 MB/s    625 ms            
+- define loop / 4 MB          3359 MB/s    610 ms       93 ms
+- define loop / 8 MB          3358 MB/s    610 ms            
+- define loop / 16 MB         3358 MB/s    610 ms            
+- define loop / 32 MB         3352 MB/s    611 ms            
+- define loop / 64 MB         3336 MB/s    614 ms            
+- define loop / 128 MB        3302 MB/s    620 ms            
+- define loop / 256 MB        3230 MB/s    634 ms            
+- define unroll / 4 MB        3389 MB/s    604 ms      250 ms
+- define unroll / 8 MB        3392 MB/s    604 ms            
+- define unroll / 16 MB       3390 MB/s    604 ms            
+- define unroll / 32 MB       3383 MB/s    605 ms            
+- define unroll / 64 MB       3370 MB/s    608 ms            
+- define unroll / 128 MB      3344 MB/s    612 ms            
+- define unroll / 256 MB      3271 MB/s    626 ms            
+SHA-1 Hash                    8474 MB/s  12641 ms            
+- 512 blocks                  6224 MB/s    643 ms      422 ms
+- 1024 blocks                 7843 MB/s    510 ms            
+- 2048 blocks                 8474 MB/s    944 ms            
+- 4096 blocks                 3183 MB/s    628 ms            
+- 8192 blocks                 3081 MB/s    649 ms            
+- 16384 blocks                2786 MB/s    718 ms            
+- 32768 blocks                2571 MB/s    778 ms            
+- 65536 blocks                2598 MB/s    770 ms            
+Single-Precision Julia        242.7 FPS   9015 ms            
+- float1 break                238.0 FPS    538 ms      172 ms
+- float1 stay / unroll 3      242.7 FPS    527 ms      250 ms
+- float2 stay / unroll 3      208.4 FPS    614 ms      266 ms
+- float1 stay / unroll 9      222.3 FPS    576 ms      282 ms
+- float2 stay / unroll 9      192.8 FPS    664 ms      265 ms
+Double-Precision Mandel       12.70 FPS   9219 ms            
+- double1 break               11.43 FPS    700 ms      234 ms
+- double1 stay / unroll 3     12.51 FPS    640 ms      250 ms
+- double2 stay / unroll 3      9.91 FPS    807 ms      250 ms
+- double1 stay / unroll 9     12.70 FPS    630 ms      172 ms
+- double2 stay / unroll 9      9.73 FPS    822 ms      266 ms
