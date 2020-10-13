@@ -1,7 +1,5 @@
 package ru.mikheev.opengles;
 
-import android.opengl.GLES20;
-
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
@@ -27,7 +25,7 @@ public class Square {
     public void draw(GL10 gl) {
         gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
         gl.glVertexPointer(3, GL10.GL_FLOAT, 0, vertexBuffer);
-        gl.glColor4f(0.5f, 0.5f, 1.0f, 1.0f);
+        gl.glColor4f(1.0f, 0.75f, 0.75f, 1.0f);
 
         gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, vertices.length / 3);
         gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);

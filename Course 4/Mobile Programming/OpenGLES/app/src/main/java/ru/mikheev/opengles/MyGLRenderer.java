@@ -12,14 +12,19 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 
     private Square mSquare;
     private Cube mCube;
+    private Sphere mSphere;
 
     private static float angleCube = 0;
     private static float speedCube = -1.5f;
+
+    private float mTransY = 0f;
+    private float mAngle = 0;
 
     public MyGLRenderer(Context context) {
         this.context = context;
         mSquare = new Square();
         mCube = new Cube();
+        mSphere = new Sphere(5);
     }
 
     @Override
@@ -54,16 +59,24 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
         gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
 
         gl.glLoadIdentity();
-        gl.glTranslatef(-1.5f, 0.0f, -6.0f);
+        gl.glTranslatef(-3f, 0.0f, -6.0f);
         mSquare.draw(gl);
 
         gl.glLoadIdentity();
-        gl.glTranslatef(1.5f, 0.0f, -6.0f);
+        gl.glTranslatef(0.0f,(float)Math.sin(mTransY), -4.0f);
+        gl.glScalef(0.2f, 0.2f, 0.2f);
+        gl.glRotatef(mAngle, 1, 0, 0);
+        mSphere.draw(gl);
+
+        gl.glLoadIdentity();
+        gl.glTranslatef(3f, 0.0f, -6.0f);
         gl.glScalef(0.8f, 0.8f, 0.8f);
         gl.glRotatef(angleCube, 1.0f, 1.0f, 1.0f);
         mCube.draw(gl);
 
         angleCube += speedCube;
+        mTransY+=.0f;
+        mAngle+=1.8;
     }
 
 }
