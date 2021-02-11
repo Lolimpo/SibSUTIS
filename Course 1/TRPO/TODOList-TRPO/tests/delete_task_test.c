@@ -1,0 +1,34 @@
+#include "todolib.h"
+
+bool delete_task(int del_num)
+{
+    char str[50][100];
+    int i = 0;
+    list = fopen("Todo-List.txt", "r");
+    if (list != NULL)
+    {
+        while(!feof(list))
+        {
+            fgets(str[i], sizeof(str), list);
+            i++;
+        }
+    }
+    fclose(list);
+    int str_count = i;
+    i = 0;
+    if ((del_num <= str_count) && (del_num != 0))
+    {
+        list = fopen("Todo-List.txt", "w");
+        str[del_num - 2][100] = 0;
+        while (i < str_count)
+        {
+            if (str[i] != 0)
+                fprintf(list, "%s", str[i]);
+            i++;
+        }
+        fclose(list);
+        return true;
+    }
+    else
+        return false;
+}
