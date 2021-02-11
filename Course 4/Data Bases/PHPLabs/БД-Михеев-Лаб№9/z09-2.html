@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+    <h4><b>Записная книжка</b></h4>
+    <form action="index.php" method="post">
+        <p>Введите фамилию и имя[*]: 
+            <input type="text" name="record[name]">
+        </p>
+        <p>Введите город: 
+            <input type="text" name="record[city]">
+        </p>
+         <p>Введите адрес: 
+             <input type="text" name="record[address]">
+        </p>
+        <p>Введите дату рождения в формате ГГГ-ММ-ДД: 
+            <input type="text" name="record[dob]">
+        </p>
+        <p>Введите e-mail[*]: 
+            <input type="text" name="record[email]">
+        </p>
+         <button type="submit">Записать</button>
+    </form>
+    <p>Поля, помеченные[*], являются обязательными для заполнения!</p>
+</body>
+</html>

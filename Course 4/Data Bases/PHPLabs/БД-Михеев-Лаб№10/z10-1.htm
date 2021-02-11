@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<body>
+	<form action = "z10-2.php" method = "GET">
+		<table>
+			<tr>
+				<th rowspan="2" align="center">Таблицы</th>
+				<th colspan="2" align="center">Отобразить</th>
+			</tr>
+			<tr>
+				<td align="center">структуру</td>
+				<td align="center">содержимое</td>
+			</tr>
+			<tr>
+				<td align="center">Продавцы (sal)</td>
+				<td align="center"><input type = "checkbox" name = "structure[]" value = "sal"></td>
+				<td align="center"><input type = "checkbox" name = "content[]" value = "sal"></td>
+			</tr>
+			<tr>
+				<td align="center">Покупатели (cust)</td>
+				<td align="center"><input type = "checkbox" name = "structure[]" value = "cust"></td>
+				<td align="center"><input type = "checkbox" name = "content[]" value = "cust"></td>
+			</tr>
+			<tr>
+				<td align="center">Заказы (ord)</td>
+				<td align="center"><input type = "checkbox" name = "structure[]" value = "ord"></td>
+				<td align="center"><input type = "checkbox" name = "content[]" value = "ord"></td>
+			</tr>
+		</table>
+		<input type = "submit" name = "doaction" value = "Вывести" style="width:300px; height:25px;"><br>
+    </form>
+</body>
+</html>
