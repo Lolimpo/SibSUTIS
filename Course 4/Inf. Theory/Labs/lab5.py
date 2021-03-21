@@ -1,6 +1,6 @@
 import re
 from collections import Counter
-from math import log2, ceil
+from math import log, ceil
 
 
 def preprocess_file(filename: str) -> str:
@@ -10,7 +10,7 @@ def preprocess_file(filename: str) -> str:
     return re.sub(r"\s{2,}", " ", whole_file)
 
 
-def decimal_converter(num):
+def decimal_converter(num) -> float:
     if num == 0.0:
         return 0.0
     while num > 1:
@@ -18,10 +18,10 @@ def decimal_converter(num):
     return num
 
 
-def float_bin(number: float, places: int):
-    whole, dec = str(number).split(".")
-    whole = int(whole)
-    dec = int(dec)
+def float_bin(number: float, places: int) -> str:
+    left, right = str(number).split(".")
+    whole = int(left)
+    dec = int(right)
     res = bin(whole).strip("0b") + "."
     for x in range(places):
         whole, dec = str((decimal_converter(dec)) * 3).split(".")
@@ -38,11 +38,11 @@ def calc_entropy(prepared_string: str, symbols_in_row: int) -> float:
     ratio = {key: value / len(split_line) for key, value in Counter(split_line).items()}
     # print(f'Probabilities: {sorted(ratio.items())}')
 
-    result = -sum(x * log2(x) for x in ratio.values())
+    result = -sum(x * log(x, 2) for x in ratio.values())
     return result / symbols_in_row
 
 
-def shanon_code(text: str):
+def shanon_code(text: str) -> float:
     split_line = list(text[i: i + 1] for i in range(len(text) - 1 + 1))
 
     probabilities = {k: v / len(split_line) for k, v in Counter(split_line).items()}
@@ -51,7 +51,7 @@ def shanon_code(text: str):
     )
     # print(probabilities)
 
-    code_length = [ceil(-log2(i)) for i in probabilities.values()]
+    code_length = [ceil(-log(i, 3)) for i in probabilities.values()]
     # print(code_length)
 
     cumulative_probs = [float(0) for _ in range(len(probabilities))]
@@ -76,8 +76,8 @@ def shanon_code(text: str):
 
     with open("coded_text.txt", "w") as f:
         for i in text:
-            index = list(probabilities.keys()).index(i)
-            f.write(codes[index])
+            ind = list(probabilities.keys()).index(i)
+            f.write(codes[ind])
 
     with open("coded_text.txt", "r") as f:
         text = f.readline()
@@ -89,8 +89,9 @@ def shanon_code(text: str):
 def main() -> int:
     text = preprocess_file("text.txt")
     orig_entropy = calc_entropy(text, 1)
-    print("Original text:", orig_entropy)
-    print("r =", shanon_code(text) - orig_entropy)
+    print("Original text entropy:", orig_entropy)
+    shanon_code(text)
+    # print("r =", shanon_code(text) - orig_entropy)
     return 0
 
 

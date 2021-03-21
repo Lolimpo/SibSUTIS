@@ -89,7 +89,7 @@ def shanon_code(text: str):
 def main() -> int:
     text = preprocess_file("text.txt")
     orig_entropy = calc_entropy(text, 1)
-    print("Original text:", orig_entropy)
+    print("Original text entropy:", orig_entropy)
     print("r =", shanon_code(text) - orig_entropy)
     return 0
 
