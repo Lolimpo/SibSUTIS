@@ -17,7 +17,7 @@ namespace MPT_RGZ
         const string operations = "+-/*";
         string clipboard = string.Empty;
 
-        private string NumberBeatifier(string v)
+        private string NumberBeautifier(string v)
         {
             if (v == "ERROR")
                 return v;
@@ -130,7 +130,7 @@ namespace MPT_RGZ
             Button button = (Button)sender;
             string fulltag = button.Tag.ToString();
             Enum.TryParse(fulltag, out TProc<TFrac>.TOprtn ParsedEnum);
-            textBox1.Text = NumberBeatifier(fracController.ExecOperation(ParsedEnum));
+            textBox1.Text = NumberBeautifier(fracController.ExecOperation(ParsedEnum));
         }
 
         public void Button_Number_Function(object sender, EventArgs e)
@@ -138,7 +138,7 @@ namespace MPT_RGZ
             Button button = (Button)sender;
             string fulltag = button.Tag.ToString();
             Enum.TryParse(fulltag, out TProc<TFrac>.TFunc ParsedEnum);
-            textBox1.Text = NumberBeatifier(fracController.ExeFunction(ParsedEnum));
+            textBox1.Text = NumberBeautifier(fracController.ExeFunction(ParsedEnum));
         }
 
         private void Button_Reset(object sender, EventArgs e)
@@ -153,7 +153,7 @@ namespace MPT_RGZ
         {
             Button button = (Button)sender;
             string FullTag = button.Tag.ToString();
-            textBox1.Text = NumberBeatifier(fracController.Calculate());
+            textBox1.Text = NumberBeautifier(fracController.Calculate());
         }
 
         private void Button_Memory(object sender, EventArgs e)
@@ -184,7 +184,7 @@ namespace MPT_RGZ
             if (e.KeyChar >= '0' && e.KeyChar <= '9' || e.KeyChar == '.')
                 textBox1.Text = fracController.ExecComandEditor(CharToEditorCommand(e.KeyChar));
             else if (operations.Contains(e.KeyChar))
-                textBox1.Text = NumberBeatifier(fracController.ExecOperation(CharToOperationsCommand<TFrac>(e.KeyChar)));
+                textBox1.Text = NumberBeautifier(fracController.ExecOperation(CharToOperationsCommand<TFrac>(e.KeyChar)));
         }
 
         private void дробьToolStripMenuItem_Click(object sender, EventArgs e)

@@ -473,6 +473,7 @@ namespace MPT_RGZ_Tests
             testClass.Fraction = input;
             Assert.AreEqual(input, testClass.Fraction);
         }
+
         [TestMethod]
         public void TestInit5()
         {
@@ -481,6 +482,7 @@ namespace MPT_RGZ_Tests
             testClass.Fraction = input;
             Assert.AreEqual(input, testClass.Fraction);
         }
+
         [TestMethod]
         public void TestInit6()
         {
@@ -490,6 +492,7 @@ namespace MPT_RGZ_Tests
             string result = "111/1111";
             Assert.AreEqual(result, testClass.Fraction);
         }
+
         [TestMethod]
         public void TestInit7()
         {
@@ -499,6 +502,7 @@ namespace MPT_RGZ_Tests
             string result = "0/1";
             Assert.AreEqual(result, testClass.Fraction);
         }
+
         [TestMethod]
         public void TestInit8()
         {
@@ -507,14 +511,7 @@ namespace MPT_RGZ_Tests
             testClass.Fraction = input;
             Assert.AreEqual(input, testClass.Fraction);
         }
-        [TestMethod]
-        public void TestInit9()
-        {
-            TFracEditor testClass = new TFracEditor();
-            string input = "0/1";
-            testClass.Fraction = input;
-            Assert.AreEqual(input, testClass.Fraction);
-        }
+
         [TestMethod]
         public void TestInit10()
         {
