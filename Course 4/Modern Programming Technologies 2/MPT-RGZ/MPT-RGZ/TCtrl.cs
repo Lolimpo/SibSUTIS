@@ -17,6 +17,7 @@ namespace MPT_RGZ
         TProc<T> proc;
         TMemory<T> memory;
         TFrac number;
+        public THistory history = new THistory();
 
         public TCtrlState CurState { get => calcState; set => calcState = value; }
         public TProc<T> Proc { get => proc; set => proc = value; }
@@ -54,6 +55,7 @@ namespace MPT_RGZ
             T tmp = new T();
             tmp.SetString(toReturn);
             proc.Rop = tmp;
+            history.AddRecord(toReturn, command.ToString());
             return toReturn;
         }
 
@@ -114,6 +116,7 @@ namespace MPT_RGZ
                 Reset();
                 return "ERROR";
             }
+            history.AddRecord(toReturn, oper.ToString());
             return toReturn;
         }
 
@@ -136,6 +139,7 @@ namespace MPT_RGZ
                 Reset();
                 return "ERROR";
             }
+            history.AddRecord(toReturn, func.ToString());
             return toReturn;
         }
 

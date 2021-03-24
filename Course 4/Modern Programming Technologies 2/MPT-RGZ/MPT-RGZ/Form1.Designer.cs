@@ -65,6 +65,7 @@ namespace MPT_RGZ
             this.button24 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +74,8 @@ namespace MPT_RGZ
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.правкаToolStripMenuItem,
             this.настройкаToolStripMenuItem,
-            this.справкаToolStripMenuItem1});
+            this.справкаToolStripMenuItem1,
+            this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(294, 24);
@@ -92,14 +94,16 @@ namespace MPT_RGZ
             // копироватьToolStripMenuItem
             // 
             this.копироватьToolStripMenuItem.Name = "копироватьToolStripMenuItem";
-            this.копироватьToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.копироватьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.копироватьToolStripMenuItem.Text = "Копировать";
+            this.копироватьToolStripMenuItem.Click += new System.EventHandler(this.копироватьToolStripMenuItem_Click);
             // 
             // вставитьToolStripMenuItem
             // 
             this.вставитьToolStripMenuItem.Name = "вставитьToolStripMenuItem";
-            this.вставитьToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.вставитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.вставитьToolStripMenuItem.Text = "Вставить";
+            this.вставитьToolStripMenuItem.Click += new System.EventHandler(this.вставитьToolStripMenuItem_Click);
             // 
             // настройкаToolStripMenuItem
             // 
@@ -115,14 +119,14 @@ namespace MPT_RGZ
             this.дробьToolStripMenuItem.Checked = true;
             this.дробьToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.дробьToolStripMenuItem.Name = "дробьToolStripMenuItem";
-            this.дробьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.дробьToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.дробьToolStripMenuItem.Text = "Дробь";
             this.дробьToolStripMenuItem.Click += new System.EventHandler(this.дробьToolStripMenuItem_Click);
             // 
             // числоToolStripMenuItem
             // 
             this.числоToolStripMenuItem.Name = "числоToolStripMenuItem";
-            this.числоToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.числоToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.числоToolStripMenuItem.Text = "Число";
             this.числоToolStripMenuItem.Click += new System.EventHandler(this.числоToolStripMenuItem_Click);
             // 
@@ -131,6 +135,7 @@ namespace MPT_RGZ
             this.справкаToolStripMenuItem1.Name = "справкаToolStripMenuItem1";
             this.справкаToolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
             this.справкаToolStripMenuItem1.Text = "Справка";
+            this.справкаToolStripMenuItem1.Click += new System.EventHandler(this.справкаToolStripMenuItem1_Click);
             // 
             // textBox1
             // 
@@ -332,7 +337,7 @@ namespace MPT_RGZ
             this.button14.Size = new System.Drawing.Size(40, 40);
             this.button14.TabIndex = 16;
             this.button14.Tag = "Five";
-            this.button14.Text = "5.";
+            this.button14.Text = "5";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.Button_Number_Edit);
             // 
@@ -387,7 +392,7 @@ namespace MPT_RGZ
             // button19
             // 
             this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button19.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button19.Location = new System.Drawing.Point(150, 243);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(40, 40);
@@ -400,7 +405,8 @@ namespace MPT_RGZ
             // button20
             // 
             this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button20.Location = new System.Drawing.Point(104, 243);
+            this.button20.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button20.Location = new System.Drawing.Point(58, 242);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(40, 40);
             this.button20.TabIndex = 22;
@@ -412,7 +418,7 @@ namespace MPT_RGZ
             // button21
             // 
             this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button21.Location = new System.Drawing.Point(58, 243);
+            this.button21.Location = new System.Drawing.Point(104, 243);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(40, 40);
             this.button21.TabIndex = 21;
@@ -485,6 +491,13 @@ namespace MPT_RGZ
             this.button26.Text = "=";
             this.button26.UseVisualStyleBackColor = true;
             this.button26.Click += new System.EventHandler(this.Button_FinishEval);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(66, 20);
+            this.toolStripMenuItem1.Text = "История";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -574,6 +587,7 @@ namespace MPT_RGZ
         private System.Windows.Forms.ToolStripMenuItem вставитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem дробьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem числоToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 

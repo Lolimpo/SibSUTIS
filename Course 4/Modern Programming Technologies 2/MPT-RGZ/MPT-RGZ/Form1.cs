@@ -15,6 +15,7 @@ namespace MPT_RGZ
         TCtrl<TFrac, TFracEditor> fracController;
         bool fracMode = true;
         const string operations = "+-/*";
+        string clipboard = string.Empty;
 
         private string NumberBeatifier(string v)
         {
@@ -198,6 +199,52 @@ namespace MPT_RGZ
             дробьToolStripMenuItem.Checked = false;
             числоToolStripMenuItem.Checked = true;
             fracMode = false;
+        }
+
+        private void копироватьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clipboard = textBox1.Text;
+        }
+
+        private void вставитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (clipboard == string.Empty)
+            {
+                MessageBox.Show("Буфер обмена пуст.\n" +
+                    "Нечего вставить.", 
+                    "Ошибка", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Exclamation);
+                return;
+            }
+            foreach(char i in clipboard)
+                textBox1.Text = fracController.ExecComandEditor(CharToEditorCommand(i));
+        }
+
+        private void справкаToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Калькулятор дробных чисел.\n" +
+                "Разработал: Михеев Н.А.\n" +
+                "Группа: ИП-713.", 
+                "Справка", 
+                MessageBoxButtons.OK, 
+                MessageBoxIcon.Information);
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form2 history = new Form2();
+            history.Show();
+            if (fracController.history.Count() == 0)
+            {
+                MessageBox.Show("История пуста", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            for (int i = 0; i < fracController.history.Count(); i++)
+            {
+                List<string> currentRecord = fracController.history[i].ToList();
+                history.dataGridView1.Rows.Add(currentRecord[0], currentRecord[1]);
+            }
         }
     }
 }
