@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Calculator.AEditor" Collapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAEQAAAAAACAiAgACAAAAAABAACA=</HashCode>
+      <FileName>AEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.ANumber" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAMAAAAAAAAAAAAgAEAAAAAAAAAAAAAAAAAiAAAAACQ=</HashCode>
+      <FileName>ANumber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.ComplexEditor" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAIAAAAQAAEAEQAAAAAACAiAhACAAAAAADAACA=</HashCode>
+      <FileName>ComplexEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Form1" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>q2QwxmIU+zlLtpnK9YrQHUI6PRYuGSfDAmKGg/iTzew=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.FracEditor" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAQAAEgEQAAAAAACAiBpACAAAAAABAACA=</HashCode>
+      <FileName>FracEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.PNumberEditor" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAQAAEgEwAAAAAACAiArACAAAAAABAECA=</HashCode>
+      <FileName>PNumberEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Program" Collapsed="true">
+    <Position X="9.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.ShowRoots" Collapsed="true">
+    <Position X="9.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>ShowRoots.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.TComplex" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAsAAAAAAAAAAKAk4EUAACAAAAAAAJAAAIAiAAAAEiQ=</HashCode>
+      <FileName>TComplex.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.TCtrl&lt;T, Editor&gt;" Collapsed="true">
+    <Position X="11.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAACAAkAAACRAAAACAgKAAgICAAA=</HashCode>
+      <FileName>TCtrl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.TFrac" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAMAAAAAAAgAAAAk4UWAAgAAAAABAIAAIAAiAAAAAiQ=</HashCode>
+      <FileName>TFrac.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.TMemory&lt;T&gt;" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAEgACABIAAABAAAA=</HashCode>
+      <FileName>TMemory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.TNumber" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAMAAAAAAAAAAAAk4EWAAgAAAAAAAIAAAAAiAAAAAiQ=</HashCode>
+      <FileName>TNumber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.TPNumber" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAMAAAAAAAAAAAAk4E2AAgAAAAAAAIAAAAAiAAAAEiQ=</HashCode>
+      <FileName>TPNumber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.TProc&lt;T&gt;" Collapsed="true">
+    <Position X="9.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAIBAAAAAAAAAACAAAAAgAAAAEAAAgBAAA=</HashCode>
+      <FileName>TProc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Properties.Resources" Collapsed="true">
+    <Position X="11.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Calculator.Properties.Settings" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
