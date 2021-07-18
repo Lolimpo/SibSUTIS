@@ -1,0 +1,5 @@
+tensorflow~=2.4.1
+numpy~=1.19.5
+pandas~=1.2.2
+matplotlib~=3.3.4
+pyqt5~=5.15.4

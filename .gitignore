@@ -708,3 +708,6 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+*.png
+*.mp4
+*.h5
